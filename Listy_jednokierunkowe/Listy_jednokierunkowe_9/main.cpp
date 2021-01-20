@@ -2,10 +2,8 @@
 
 using namespace std;
 
-/**
- * ANCHOR
- * Zadanie 1
- */
+// NOTE: Nie działa
+
 struct elem{
     int dane;
     elem* nast;
@@ -37,7 +35,7 @@ void insert(elem *&lista, int i, int x){
     }
 }
 
-void remove(elem* &lista, int i){
+void remove(elem *&lista, int i){
     if (lista != NULL){
         if (i == 1){
             elem *stary = lista;
@@ -70,7 +68,7 @@ void remove(elem* &lista, int i){
     }
 }
 
-int read(elem* &lista, int i){
+int read(elem *&lista, int i){
     if (lista != NULL){
         if (i >= 1){
             elem *tmp = lista;
@@ -88,10 +86,6 @@ int read(elem* &lista, int i){
     }
 }
 
-/**
- * ANCHOR
- * Zadanie 2
- */
 int size(elem* &lista){
     if(lista != NULL){
         elem* tmp = lista;
@@ -104,10 +98,6 @@ int size(elem* &lista){
     }
 }
 
-/**
- * ANCHOR
- * Zadanie 3
- */
 void print(elem* &lista){
     if(lista != NULL){
         elem* tmp = lista;
@@ -118,10 +108,7 @@ void print(elem* &lista){
     }
     else { cerr << endl << "Lista nie istnieje!"; }
 }
-/**
- * ANCHOR
- * Zadanie 4
- */
+
 struct stack{
     int dane;
     stack* nast;
@@ -160,10 +147,6 @@ void reverseListByStack(elem* &lista){
     else { cerr << endl << "Lista nie istnieje!"; }
 }
 
-/**
- * ANCHOR
- * Zadanie 5
- */
 void reverseList(elem* &lista){
     int s = size(lista);
     cout << "\n\t";
@@ -171,10 +154,7 @@ void reverseList(elem* &lista){
         cout << read(lista, i) << ", ";
     }
 }
-/**
- * ANCHOR
- * Zadanie 6
- */
+
 void destroy(elem* &lista){
     if(lista != NULL){
         while(lista != NULL){
@@ -184,10 +164,7 @@ void destroy(elem* &lista){
         }
     }
 }
-/**
- * ANCHOR
- * Zadanie 7
- */
+
 elem* search(int x, elem* lista){
     if(lista != NULL){
         elem* tmp = lista;
@@ -208,38 +185,6 @@ elem* search(int x, elem* lista){
 int main()
 {
     elem *lista = NULL;
-    // NOTE: Zadanie 1
-    insert(lista, 1, 45);   // 1 element
-    insert(lista, 1, 123);  // 2 element
-    insert(lista, 2, 1643); // 3 element
-    insert(lista, 3, 234);  // 4 element
-    insert(lista, 4, 924);  // 5 element
-    insert(lista, 3, 3);    // 6 element
-
-    // NOTE: Zadanie 2
-    cout << "Wielkosc listy(Zadanie 2): " << size(lista) << "\n";
-
-    // NOTE: Zadanie 3
-    cout << "Lista (Zadanie 3): ";
-    print(lista);
-
-    remove(lista, 5);
-    cout << endl << "\nPo usunieciu 5 pozycji (924): ";
-    print(lista);
-
-    cout << endl << "\nCzwarty element listy: " << read(lista, 4);
-
-    // NOTE: Zadanie 4
-    cout << "\nODWROCONY PRZY POMOCY STOSU (Zadanie 4): \n";
-    reverseListByStack(lista);
-
-    // NOTE: Zadanie 5
-    cout << "\nODWROCONY BEZ WYKORZYSTANIA STRUKTURY DANYCH (Zadanie 5): \n";
-    reverseList(lista);
-
-    cout << "\n\n(Zadanie 7) Szukamy elementu \'1643\', jest on pod adresem: " << search(1643, lista) << endl;
-
-    // NOTE: Zadanie 6
-    destroy(lista);
+    
     return EXIT_SUCCESS;
 }
